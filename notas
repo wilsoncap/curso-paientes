@@ -1,0 +1,44 @@
+<!-- con el metodo inline handler  input="(e) => nombre = e.target.value -->
+<!-- con el metodo metodo handler  declaro una funcion en el script y la llamo en el @input -->
+
+        const leerNombre = e => {
+            nombre.value = e.target.value
+        }
+
+
+reactive se usa cuando hay que agrupar varios valores en un solo objeto, pero si la informacio
+hay que valorarla por separado lo mejor es usar ref
+
+const paciente = reactive({
+    nombre: '',
+    propietario: ''
+})
+
+
+
+formas de valida$refs.
+
+if ([paciente.nombre, paciente.propietario].includes('')) {
+    console.log('si estan vacios');
+}
+
+if (Object.values(paciente).includes('')) {
+    console.log('si estan vacios');
+}
+
+
+state es lo que voy declarando en en el scrip del component$el
+
+
+:alerta="alerta"
+
+const props = defineProps({
+    alerta:{
+        type:Object,
+        required:true
+    }
+})
+
+directivas  en vue 
+
+ref, reactive, computed, onMounthed
